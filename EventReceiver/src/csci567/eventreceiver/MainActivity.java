@@ -6,20 +6,29 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	private OnClickListener badListener = new OnClickListener () {
 		public void onClick(View v) {
-			Button badButton = (Button) findViewById(R.id.bad);
-			badButton.setText("Loser");
+/*			Button badButton = (Button) findViewById(R.id.bad);
+			badButton.setText("Loser"); */
+			
+			/*Toast*/
+			Toast toast = Toast.makeText(getApplicationContext(), R.string.touch_bad, Toast.LENGTH_SHORT);
+			toast.show();
 		}
 	};
 	
 	private OnClickListener goodListener = new OnClickListener () {
 		public void onClick (View v) {
-			Button goodButton = (Button) findViewById(R.id.good);
-			goodButton.setText("You are Wonderful!");
+/*			Button goodButton = (Button) findViewById(R.id.good);
+			goodButton.setText("You are Wonderful!"); */
+			
+			/*Toast*/
+			Toast toast = Toast.makeText(getApplicationContext(), R.string.touch_good, Toast.LENGTH_SHORT);
+			toast.show();
 		}
 	};
 	
