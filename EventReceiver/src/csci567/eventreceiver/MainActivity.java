@@ -1,34 +1,43 @@
 package csci567.eventreceiver;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	private OnClickListener badListener = new OnClickListener () {
 		public void onClick(View v) {
-/*			Button badButton = (Button) findViewById(R.id.bad);
-			badButton.setText("Loser"); */
-			
-			/*Toast*/
-			Toast toast = Toast.makeText(getApplicationContext(), R.string.touch_bad, Toast.LENGTH_SHORT);
-			toast.show();
+			Notification n  = new NotificationCompat.Builder(getBaseContext())
+	        .setContentTitle("Bad Button")
+	        .setContentText("The bad button was touched.")
+	        .setSmallIcon(R.drawable.ic_launcher).build();
+	  
+			NotificationManager notificationManager = 
+				(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+			notificationManager.notify(0, n);
 		}
 	};
 	
 	private OnClickListener goodListener = new OnClickListener () {
 		public void onClick (View v) {
-/*			Button goodButton = (Button) findViewById(R.id.good);
-			goodButton.setText("You are Wonderful!"); */
-			
-			/*Toast*/
-			Toast toast = Toast.makeText(getApplicationContext(), R.string.touch_good, Toast.LENGTH_SHORT);
-			toast.show();
+
+			Notification n  = new NotificationCompat.Builder(getBaseContext())
+	        .setContentTitle("Good Button")
+	        .setContentText("The good button was pressed.")
+	        .setSmallIcon(R.drawable.ic_launcher).build();
+	  
+			NotificationManager notificationManager = 
+				(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+			notificationManager.notify(0, n);
 		}
 	};
 	
