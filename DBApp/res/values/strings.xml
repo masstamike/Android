@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DB app</string>
+    <string name="action_settings">Settings</string>
+    <string name="database"></string>
+    <string name="hint">Type something here</string>
+    <string name="get">Get text</string>
+    <string name="add">Add text</string>
+
+</resources>
